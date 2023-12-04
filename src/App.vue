@@ -1,198 +1,183 @@
 <script>
+import TheHeader from './components/the-header/index.vue';
+import TheSidebar from './components/TheSidebar.vue';
+import TheBanner from './components/TheBanner.vue';
+
   export default {
-    data(){
-      return {}
-    }
-  }
+    data() {
+        return {};
+    },
+    components: { TheHeader, TheSidebar, TheBanner }
+}
 </script>
 
 <template>
-  <!-- Header Start -->
-  <div class="header h-16 bg-gray-900 flex items-center justify-between px-8">
-    <!-- Logo Area Start -->
-    <a href="index.html" class="logo w-1/12 h-16 pt-1 flex items-center">
-      <img src="../logo.png" alt="Amazon Logo">
-    </a>
-    <!-- Logo Area End -->
-    <!-- Search From Start -->
-    <div class="search h-16 bg-gray-900 flex items-center">
-      <input class="h-11 w-96 bg-gray-800 border border-gray-500 border-opacity-75 rounded-l-xl px-3 text-white ml-6 focus:outline-none placeholder-white" type="text" id="search" placeholder="Search here...">
-      <select name="cars" id="cars" class="h-11 w-36 bg-gray-800 border border-gray-500 border-opacity-75 px-3 text-white focus:outline-none">
-        <option class="px-3 h-9">Categories</option>
-        <option value="man">Man</option>
-        <option value="woman">Woman</option>
-        <option value="kid's">Kid's</option>
-      </select>
-      <button type="submit" class="h-11 w-10 bg-yellow-500 rounded-r-xl flex items-center justify-center text-white">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
-      </button>
-    </div>
-    <!-- Search From End -->
-    <!-- Right Icon Area Start -->
-    <div class="icons text-white w-48 h-9 flex items-center justify-around">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-      </svg>
-      <a href="cart.html" class="cart-icon h-9 w-9 bg-yellow-500 flex items-center justify-center rounded-xl">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
-      </a>
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-      </svg>
-      <div class="user-icon h-9 w-9 flex items-center justify-center">
-        <img class="rounded-xl" src="https://lh3.googleusercontent.com/ogw/ADea4I7_Gy7MS-4GJvxAh_BE5sRDs52xtCfL7UykZtd02w=s83-c-mo" alt="user">
-      </div>
-    </div>
-    <!-- Right Icon Area Css -->
-  </div>
-  <!-- Header End -->
+  <TheHeader/>
   <div class="main h-[calc(100vh-64px)] flex">
-    <div class="main-sidebar w-[12%] bg-gray-900 border-t-2 border-gray-700 p-3">
-      <div class="sidebar-categories">
-        <div class="categories-lavel text-yellow-500 cursor-pointer flex font-bold p-2 bg-gray-700 rounded-lg">
-          <span class="w-8">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
-            </svg>
-          </span>
-          <span>Categories</span>
-        </div>
-        <div class="subcategories mt-3 p-2">
-          <div class="subcategories-item text-white cursor-pointer flex font-semibold mb-2 hover:bg-gray-700 rounded-xl p-2">
-            <span class="w-4"></span>
-            <span>Electronics</span>
-          </div>
-          <div class="subcategories-item text-white cursor-pointer flex font-semibold mb-2 hover:bg-gray-700 rounded-xl p-2">
-            <span class="w-4"></span>
-            <span>Computers</span>
-          </div>
-          <div class="subcategories-item text-white cursor-pointer flex font-semibold mb-2 hover:bg-gray-700 rounded-xl p-2">
-            <span class="w-4"></span>
-            <span>Smart Home</span>
-          </div>
-          <div class="subcategories-item text-white cursor-pointer flex font-semibold mb-2 hover:bg-gray-700 rounded-xl p-2">
-            <span class="w-4"></span>
-            <span>Arts & Crafts</span>
-          </div>
-          <div class="subcategories-item text-white cursor-pointer flex font-semibold mb-2 hover:bg-gray-700 rounded-xl p-2">
-            <span class="w-4"></span>
-            <span>Baby</span>
-          </div>
-          <div class="subcategories-item text-white cursor-pointer flex font-semibold mb-2 hover:bg-gray-700 rounded-xl p-2">
-            <span class="w-4"></span>
-            <span>Fashion</span>
-          </div>
-          <div class="subcategories-item text-white cursor-pointer flex font-semibold mb-2 hover:bg-gray-700 rounded-xl p-2">
-            <span class="w-4"></span>
-            <span>Health</span>
-          </div>
-          <div class="subcategories-item text-white cursor-pointer flex font-semibold mb-2 hover:bg-gray-700 rounded-xl p-2">
-            <span class="w-4"></span>
-            <span>Kitchen</span>
-          </div>
-          <div class="subcategories-item text-white cursor-pointer flex font-semibold mb-2 hover:bg-gray-700 rounded-xl p-2">
-            <span class="w-4"></span>
-            <span>Toy & Games</span>
-          </div>
-          <div class="subcategories-item text-white cursor-pointer flex font-semibold mb-2 hover:bg-gray-700 rounded-xl p-2">
-            <span class="w-4"></span>
-            <span>Video Games</span>
-          </div>
-          <div class="subcategories-item text-white cursor-pointer flex font-semibold mb-4 p-2 hover:bg-gray-700 rounded-xl">
-            <span class="w-4"><i class="fas fa-percent"></i></span>
-            <span>Sell on Amazon</span>
-          </div>
-          <div class="subcategories-item text-white cursor-pointer flex font-semibold mb-4 p-2 hover:bg-gray-700 rounded-xl">
-            <span class="w-7">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </span>
-            <span>Help</span>
-          </div>
-
-        </div>
-      </div>
-    </div>
+    <TheSidebar/>
     <div class="main-section flex-1 p-6 bg-gray-100">
-      <div class="banner-scetion bg-[url('../banner.jpg')] bg-top bg-cover bg-no-repeat h-48 rounded-lg flex items-end">
-        <a href="#" class="bg-white py-2 px-4 rounded-full m-4 text-bold text-yellow-500">Browse Products</a>
-      </div>
-      <div class="product-area mt-5">
-        <h1 class="product-title text-2xl font-bold text-gray-700 mb-5">Hot Deals 🔥</h1>
-        <div class="product-items flex items-center flex-wrap">
-          <div class="product-item mr-5">
-            <div class="product-image w-48 h-52 bg-white rounded-lg p-4">
+      <TheBanner/>
+      <div class="product-area mt-8">
+        <h1 class="product-title text-2xl font-bold text-gray-700 mb-5">🔥 Hot Deals</h1>
+        <div class="product-items grid grid-cols-7 gap-6">
+          <div class="product-item">
+            <div class="product-image w-full h-52 bg-white rounded-lg p-4">
               <img class="w-full h-full object-contain" src="https://i.ibb.co/jRZnKHr/nintendo-switch.jpg" alt="nintendo-switch">
             </div>
             <div class="product-details mt-2">
               <h3 class="product-title text-gray-700 font-bold text-base">Nintendo Switch</h3>
-              <p class="product-company text-green-700 text-sm font-bold">Nintendo</p>
-              <div class="product-rating flex items-center my-1">
-                <div class="icons">⭐⭐⭐⭐⭐</div>
-                <span class="icon-text text-yellow-500 text-base font-bold mt-1 ml-1">4.7</span>
+              <div class="flex items-center justify-between">
+                <p class="product-company text-green-700 text-sm font-bold">Nintendo</p>
+                <div class="product-rating flex items-center my-1">
+                  <div class="icons">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 text-yellow-400">
+                      <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <span class="icon-text text-gray-500 text-sm font-bold mt-[3px] ml-1">4.7</span>
+                </div>
+                <p class="product-price font-semibold text-gray-700 text-base">$50.99</p>
               </div>
-              <p class="product-price font-bold text-gray-700 text-lg">$290.00</p>
             </div>
           </div>
-          <div class="product-item mr-5">
-            <div class="product-image w-48 h-52 bg-white rounded-lg p-4">
+          <div class="product-item">
+            <div class="product-image w-full h-52 bg-white rounded-lg p-4">
               <img class="w-full h-full object-contain" src="https://i.ibb.co/qk326LL/Apple-Mac-Book-Pro.jpg" alt="Apple-Mac-Book-Pro">
             </div>
             <div class="product-details mt-2">
               <h3 class="product-title text-gray-700 font-bold text-base">Apple MacBook Pro</h3>
-              <p class="product-company text-green-700 text-sm font-bold">Apple</p>
-              <div class="product-rating flex items-center my-1">
-                <div class="icons">⭐⭐⭐⭐⭐</div>
-                <span class="icon-text text-yellow-500 text-base font-bold mt-1 ml-1">4.8</span>
+              <div class="flex items-center justify-between">
+                <p class="product-company text-green-700 text-sm font-bold">Nintendo</p>
+                <div class="product-rating flex items-center my-1">
+                  <div class="icons">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 text-yellow-400">
+                      <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <span class="icon-text text-gray-500 text-sm font-bold mt-[3px] ml-1">4.7</span>
+                </div>
+                <p class="product-price font-semibold text-gray-700 text-base">$50.99</p>
               </div>
-              <p class="product-price font-bold text-gray-700 text-lg">$1,149.00</p>
             </div>
           </div>
-          <div class="product-item mr-5">
-            <div class="product-image w-48 h-52 bg-white rounded-lg p-4">
+          <div class="product-item">
+            <div class="product-image w-full h-52 bg-white rounded-lg p-4">
               <img class="w-full h-full object-contain" src="https://i.ibb.co/270STSN/iphone-12-pro-family-hero.jpg" alt="iphone-12-pro">
             </div>
             <div class="product-details mt-2">
               <h3 class="product-title text-gray-700 font-bold text-base">iPhone 12 Pro Max</h3>
-              <p class="product-company text-green-700 text-sm font-bold">Apple</p>
-              <div class="product-rating flex items-center my-1">
-                <div class="icons">⭐⭐⭐⭐⭐</div>
-                <span class="icon-text text-yellow-500 text-base font-bold mt-1 ml-1">4.9</span>
+              <div class="flex items-center justify-between">
+                <p class="product-company text-green-700 text-sm font-bold">Nintendo</p>
+                <div class="product-rating flex items-center my-1">
+                  <div class="icons">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 text-yellow-400">
+                      <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <span class="icon-text text-gray-500 text-sm font-bold mt-[3px] ml-1">4.7</span>
+                </div>
+                <p class="product-price font-semibold text-gray-700 text-base">$50.99</p>
               </div>
-              <p class="product-price font-bold text-gray-700 text-lg">$1,199.00</p>
             </div>
           </div>
-          <div class="product-item mr-5">
-            <div class="product-image w-48 h-52 bg-white rounded-lg p-4">
+          <div class="product-item">
+            <div class="product-image w-full h-52 bg-white rounded-lg p-4">
               <img class="w-full h-full object-contain" src="https://i.ibb.co/Q68rJFL/canon-eos-r-removebg-preview.png" alt="canon-eos-r">
             </div>
             <div class="product-details mt-2">
               <h3 class="product-title text-gray-700 font-bold text-base">Canon EOS R</h3>
-              <p class="product-company text-green-700 text-sm font-bold">Canon</p>
-              <div class="product-rating flex items-center my-1">
-                <div class="icons">⭐⭐⭐⭐⭐</div>
-                <span class="icon-text text-yellow-500 text-base font-bold mt-1 ml-1">4.3</span>
+              <div class="flex items-center justify-between">
+                <p class="product-company text-green-700 text-sm font-bold">Nintendo</p>
+                <div class="product-rating flex items-center my-1">
+                  <div class="icons">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 text-yellow-400">
+                      <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <span class="icon-text text-gray-500 text-sm font-bold mt-[3px] ml-1">4.7</span>
+                </div>
+                <p class="product-price font-semibold text-gray-700 text-base">$50.99</p>
               </div>
-              <p class="product-price font-bold text-gray-700 text-lg">$2,899.00</p>
             </div>
           </div>
-          <div class="product-item mr-5">
-            <div class="product-image w-48 h-52 bg-white rounded-lg p-4">
+          <div class="product-item">
+            <div class="product-image w-full h-52 bg-white rounded-lg p-4">
               <img class="w-full h-full object-contain" src="https://i.ibb.co/3rTvpSF/levant-uhd.webp" alt="levant-uhd">
             </div>
             <div class="product-details mt-2">
               <h3 class="product-title text-gray-700 font-bold text-base">AU7000 UHD 4K</h3>
-              <p class="product-company text-green-700 text-sm font-bold">Samsung</p>
-              <div class="product-rating flex items-center my-1">
-                <div class="icons">⭐⭐⭐⭐⭐</div>
-                <span class="icon-text text-yellow-500 text-base font-bold mt-1 ml-1">4.5</span>
+              <div class="flex items-center justify-between">
+                <p class="product-company text-green-700 text-sm font-bold">Nintendo</p>
+                <div class="product-rating flex items-center my-1">
+                  <div class="icons">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 text-yellow-400">
+                      <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <span class="icon-text text-gray-500 text-sm font-bold mt-[3px] ml-1">4.7</span>
+                </div>
+                <p class="product-price font-semibold text-gray-700 text-base">$50.99</p>
               </div>
-              <p class="product-price font-bold text-gray-700 text-lg">$1,488.00</p>
+            </div>
+          </div>
+          <div class="product-item">
+            <div class="product-image w-full h-52 bg-white rounded-lg p-4">
+              <img class="w-full h-full object-contain" src="https://i.ibb.co/3rTvpSF/levant-uhd.webp" alt="levant-uhd">
+            </div>
+            <div class="product-details mt-2">
+              <h3 class="product-title text-gray-700 font-bold text-base">AU7000 UHD 4K</h3>
+              <div class="flex items-center justify-between">
+                <p class="product-company text-green-700 text-sm font-bold">Nintendo</p>
+                <div class="product-rating flex items-center my-1">
+                  <div class="icons">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 text-yellow-400">
+                      <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <span class="icon-text text-gray-500 text-sm font-bold mt-[3px] ml-1">4.7</span>
+                </div>
+                <p class="product-price font-semibold text-gray-700 text-base">$50.99</p>
+              </div>
+            </div>
+          </div>
+          <div class="product-item">
+            <div class="product-image w-full h-52 bg-white rounded-lg p-4">
+              <img class="w-full h-full object-contain" src="https://i.ibb.co/3rTvpSF/levant-uhd.webp" alt="levant-uhd">
+            </div>
+            <div class="product-details mt-2">
+              <h3 class="product-title text-gray-700 font-bold text-base">AU7000 UHD 4K</h3>
+              <div class="flex items-center justify-between">
+                <p class="product-company text-green-700 text-sm font-bold">Nintendo</p>
+                <div class="product-rating flex items-center my-1">
+                  <div class="icons">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 text-yellow-400">
+                      <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <span class="icon-text text-gray-500 text-sm font-bold mt-[3px] ml-1">4.7</span>
+                </div>
+                <p class="product-price font-semibold text-gray-700 text-base">$50.99</p>
+              </div>
+            </div>
+          </div>
+          <div class="product-item">
+            <div class="product-image w-full h-52 bg-white rounded-lg p-4">
+              <img class="w-full h-full object-contain" src="https://i.ibb.co/3rTvpSF/levant-uhd.webp" alt="levant-uhd">
+            </div>
+            <div class="product-details mt-2">
+              <h3 class="product-title text-gray-700 font-bold text-base">AU7000 UHD 4K</h3>
+              <div class="flex items-center justify-between">
+                <p class="product-company text-green-700 text-sm font-bold">Nintendo</p>
+                <div class="product-rating flex items-center my-1">
+                  <div class="icons">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 text-yellow-400">
+                      <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <span class="icon-text text-gray-500 text-sm font-bold mt-[3px] ml-1">4.7</span>
+                </div>
+                <p class="product-price font-semibold text-gray-700 text-base">$50.99</p>
+              </div>
             </div>
           </div>
         </div>

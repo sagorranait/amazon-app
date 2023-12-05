@@ -6,7 +6,7 @@
 
 <template>
   <div class="search h-16 bg-gray-900 flex items-center">
-    <input list="category" class="h-10 w-[650px] bg-gray-800 border border-gray-500 border-opacity-75 rounded-l-xl px-3 text-white ml-6 focus:outline-none placeholder-white" type="text" id="search" placeholder="Search Amazon">
+    <input list="category" class="h-10 w-[650px] bg-gray-800 border border-gray-500 border-opacity-75 rounded-l-xl px-3 text-white ml-6 focus:outline-none placeholder-white" type="text" id="search" placeholder="Search for anything...">
       <datalist id="category" class="w-[650px] bg-white">
         <option value="Edge">Edge</option>
         <option value="Firefox">Edge</option>

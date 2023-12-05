@@ -7,4 +7,16 @@
   *, body{
     font-family: 'Poppins', sans-serif;
   }
+
+  #search::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+
+  .main-section::-webkit-scrollbar {
+    display: none;
+  }
+  .main-section {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
